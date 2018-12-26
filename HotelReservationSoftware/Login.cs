@@ -91,7 +91,7 @@ namespace HotelReservationSoftware
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error while trying to start service: " + ex.Message, "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error while trying to start service: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
