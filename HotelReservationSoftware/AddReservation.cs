@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -257,7 +256,7 @@ namespace HotelReservationSoftware
                 cmbYear.SelectedItem = expireDate[1];
                 txtReferenceNo.Text = referenceNumber;
                 txtInvoiceNumber.Text = invoiceNumber;
-                txtSubtotal.Text = txtTotal.Text.ToString() + " лв."; //= totalSum.ToString() ;
+                txtSubtotal.Text = txtTotal.Text.ToString() + " лв.";
 
                 txtRestSum.Text = restSum.ToString() + " лв.";
 
@@ -406,7 +405,7 @@ namespace HotelReservationSoftware
             DateTime checkIn = dtDateCheckIn.Date;
             DateTime checkOut = dtDateCheckOut.Date;
 
-            int nights = Int16.Parse(txtNumberOfNigths.Text.ToString());
+            int nights = short.Parse(txtNumberOfNigths.Text.ToString());
             string notes = txtNotes.Text.ToString();
             string payMethod = cmbPayMethod.SelectedItem.ToString();
             string nameOnCard = "";
@@ -416,7 +415,7 @@ namespace HotelReservationSoftware
             int expireYear = 0;
 
             decimal subTotal = price(txtSubtotal.Text.ToString());
-            decimal discount = Decimal.Parse(nudDiscount.Value.ToString());
+            decimal discount = decimal.Parse(nudDiscount.Value.ToString());
             decimal total = price(txtTotal.Text.ToString());
             decimal paid = price(txtPaid.Text.ToString());
             restSum = price(txtRestSum.Text.ToString());
@@ -915,7 +914,7 @@ namespace HotelReservationSoftware
         {
             decimal sumOfAllBookedRooms = 0;
             decimal sumOfAllBookedServices = 0;
-            numberOfNights = Int16.Parse(txtNumberOfNigths.Text.ToString());
+            numberOfNights = short.Parse(txtNumberOfNigths.Text.ToString());
 
             if (dgvRooms.RowCount > 0)
             {
@@ -938,7 +937,7 @@ namespace HotelReservationSoftware
 
         private void nudDiscount_ValueChanged(object sender, EventArgs e)
         {
-            decimal discount = Decimal.Parse(nudDiscount.Value.ToString());
+            decimal discount = decimal.Parse(nudDiscount.Value.ToString());
             totalSum = price(txtTotal.Text.ToString());
 
             if (discount != 0)

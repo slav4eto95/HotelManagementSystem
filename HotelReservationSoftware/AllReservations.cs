@@ -1,11 +1,8 @@
-﻿using HotelReservationSoftware.Reports;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace HotelReservationSoftware
@@ -21,12 +18,11 @@ namespace HotelReservationSoftware
         public decimal TotalSum, RestSum;
 
         public bool IsButtonSearchGuestClicked;
-        public List<String> List;
-
-        DBHelpers.Rooms Rooms;
-        DBHelpers.Bookings Bookings;
-        DBHelpers.BookedRooms BookedRooms;
-        DBHelpers.BookedServices BookedServices;
+        public List<string> List;
+        private DBHelpers.Rooms Rooms;
+        private DBHelpers.Bookings Bookings;
+        private DBHelpers.BookedRooms BookedRooms;
+        private DBHelpers.BookedServices BookedServices;
 
         public frmAllReservations(bool searchGuest, int userLevelID)
         {
@@ -39,7 +35,7 @@ namespace HotelReservationSoftware
             UserLevelID = userLevelID;
         }
 
-        public frmAllReservations(List<String> list, int userLevelID, bool searchGuest)
+        public frmAllReservations(List<string> list, int userLevelID, bool searchGuest)
         {
             InitializeComponent();
             Rooms = new DBHelpers.Rooms();
@@ -230,7 +226,7 @@ namespace HotelReservationSoftware
                 for (int i = 0; i < dgvAllReservations.Rows.Count; ++i)
                 {
                     bookingStatus = Convert.ToString(dgvAllReservations.Rows[i].Cells["bookingStatusNameDataGridViewTextBoxColumn"].Value);
-                    
+
                     var queryBookingStatus = db.BookingStatus
                                                         .Where(bs => bs.BookingStatusName == bookingStatus)
                                                         .ToList();
@@ -275,7 +271,7 @@ namespace HotelReservationSoftware
                 for (int i = 0; i < dgvAllReservations.Rows.Count; ++i)
                 {
                     bookingStatus = Convert.ToString(dgvAllReservations.Rows[i].Cells["bookingStatusNameDataGridViewTextBoxColumn"].Value);
-                    
+
                     var queryBookingStatus = db.BookingStatus
                                                         .Where(bs => bs.BookingStatusName == bookingStatus)
                                                         .ToList();

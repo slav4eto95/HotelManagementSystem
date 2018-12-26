@@ -46,9 +46,9 @@ namespace HotelReservationSoftware
         {
             DBHelpers.BookedServices BookedServices = new DBHelpers.BookedServices();
 
-            decimal servicePrice = Decimal.Parse(txtPrice.Text.ToString());
-            int quantity = Int16.Parse(nudQuantity.Value.ToString());
-            decimal total = Decimal.Parse(txtTotal.Text.ToString());
+            decimal servicePrice = decimal.Parse(txtPrice.Text.ToString());
+            int quantity = short.Parse(nudQuantity.Value.ToString());
+            decimal total = decimal.Parse(txtTotal.Text.ToString());
 
             DateTime date = DateTime.Parse(dtpDate.Value.ToShortDateString());
 
@@ -100,8 +100,8 @@ namespace HotelReservationSoftware
 
         private void nudQuantity_ValueChanged(object sender, EventArgs e)
         {
-            decimal price = Decimal.Parse(txtPrice.Text.ToString());
-            int quantity = Int16.Parse(nudQuantity.Value.ToString());
+            decimal price = decimal.Parse(txtPrice.Text.ToString());
+            int quantity = short.Parse(nudQuantity.Value.ToString());
 
             totalSum = price * quantity;
             txtTotal.Text = totalSum.ToString();

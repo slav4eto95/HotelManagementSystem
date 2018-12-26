@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace HotelReservationSoftware
@@ -61,7 +55,7 @@ namespace HotelReservationSoftware
                 DataGridViewRow selectedRow = dgvAllRooms.Rows[selectedRowIndex];
 
                 RoomID = Convert.ToInt16(selectedRow.Cells["roomIDDataGridViewTextBoxColumn"].Value);
-                
+
                 DialogResult result = MyMessageBox.ShowMessage("Сигурни ли сте, \nче искате да премахнете стаята?", "Изтриване на стая", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {

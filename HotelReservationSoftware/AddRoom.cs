@@ -61,7 +61,7 @@ namespace HotelReservationSoftware
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            int roomID = Int16.Parse(txtRoomNo.Text.ToString());
+            int roomID = short.Parse(txtRoomNo.Text.ToString());
             string roomType = cmbRoomType.SelectedValue.ToString();
             int roomTypeID;
             using (var db = new HotelManagementSystemEntities())

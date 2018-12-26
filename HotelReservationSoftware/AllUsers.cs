@@ -6,8 +6,8 @@ namespace HotelReservationSoftware
 {
     public partial class frmAllUsers : Form
     {
-        HotelManagementSystemEntities db = new HotelManagementSystemEntities();
-        public Users Users = new Users();
+        private HotelManagementSystemEntities Db;
+        public Users Users;
         public int UserID, UserLevel, UserLevelID;
         public string strUserName, strName;
 
@@ -15,6 +15,8 @@ namespace HotelReservationSoftware
         {
             InitializeComponent();
 
+            Db = new HotelManagementSystemEntities();
+            Users = new Users();
             UserLevelID = userLevelID;
         }
 
@@ -44,7 +46,7 @@ namespace HotelReservationSoftware
         {
             DataGridViewRow row = dgvUsers.CurrentRow;
             // Get the userID of the current selected row
-            UserID = Int16.Parse(row.Cells[4].Value.ToString());
+            UserID = short.Parse(row.Cells[4].Value.ToString());
 
             DialogResult result;
             result = MyMessageBox.ShowMessage("Сигурни ли сте, че искате да изтриете този запис?", "Изтриване на запис", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

@@ -39,17 +39,17 @@ namespace HotelReservationSoftware
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            roomID = Int16.Parse(cmbRooms.Text.ToString());
+            roomID = short.Parse(cmbRooms.Text.ToString());
             roomType = cmbRoomType.Text.ToString();
             using (var db = new HotelManagementSystemEntities())
             {
                 var room = (from r in db.RoomTypes
-                            where r.RoomTypeDesc== roomType
+                            where r.RoomTypeDesc == roomType
                             select r).First();
                 roomPrice = room.RoomPrice;
             }
-            adultsNo = Int16.Parse(nudNumAdults.Value.ToString());
-            childrenNo = Int16.Parse(nudNumChilds.Value.ToString());
+            adultsNo = short.Parse(nudNumAdults.Value.ToString());
+            childrenNo = short.Parse(nudNumChilds.Value.ToString());
 
             // Add 
             if (buttonAddWasClicked)
@@ -58,7 +58,6 @@ namespace HotelReservationSoftware
                 if (BookedRooms.AddBookedRoom(bookingID, roomID, guestName, guestPhone, adultsNo, childrenNo))
                 {
                     buttonAddWasClicked = false;
-                    //MyMessageBox.ShowMessage("Успешно резервирахте стая!", "Успешна резервация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
                 else
@@ -73,7 +72,6 @@ namespace HotelReservationSoftware
                 bool isEdited = BookedRooms.EditBookedRoom(bookingID, roomID, guestName, guestPhone, adultsNo, childrenNo);
                 if (isEdited)
                 {
-                    //MyMessageBox.ShowMessage("Успешно променихте записа!", "Поздравления", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
                 else

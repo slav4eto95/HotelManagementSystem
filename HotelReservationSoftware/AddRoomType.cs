@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelReservationSoftware
@@ -54,10 +47,10 @@ namespace HotelReservationSoftware
             DBHelpers.RoomTypes RoomTypes = new DBHelpers.RoomTypes();
             roomType = txtRoomType.Text.ToString();
             string price = txtPrice.Text.ToString().Replace(',', '.');
-            roomPrice = Decimal.Parse(price);
-            adultsNum = Int16.Parse(nudAdultNo.Value.ToString());
-            bedsNum = Int16.Parse(nudBedroomNum.Value.ToString());
-            childrenNum = Int16.Parse(nudChildrenNum.Value.ToString());
+            roomPrice = decimal.Parse(price);
+            adultsNum = short.Parse(nudAdultNo.Value.ToString());
+            bedsNum = short.Parse(nudBedroomNum.Value.ToString());
+            childrenNum = short.Parse(nudChildrenNum.Value.ToString());
             bedType = cmbBedType.SelectedItem.ToString();
             if (chkCanSmoke.Checked)
             {
