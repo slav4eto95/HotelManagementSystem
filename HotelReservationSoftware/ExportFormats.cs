@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
-using System.Diagnostics;
 
 namespace HotelReservationSoftware
 {
@@ -36,7 +36,7 @@ namespace HotelReservationSoftware
 
             for (int j = 0; j < dGV.Columns.Count; j++)
             {
-                xlWorkSheet.Cells[1, j+1] = dGV.Columns[j].HeaderText;
+                xlWorkSheet.Cells[1, j + 1] = dGV.Columns[j].HeaderText;
 
             }
             xlRange = xlWorkSheet.get_Range("I1").EntireColumn;
@@ -75,9 +75,6 @@ namespace HotelReservationSoftware
             }
             try
             {
-                //UTF8Encoding utf8 = new UTF8Encoding();
-                //Encoding utf16 = Encoding.GetEncoding(866);
-                //byte[] output = utf8.GetBytes(stOutput);
                 byte[] output = Encoding.Default.GetBytes(stOutput);
                 FileStream fs = new FileStream(filename, FileMode.Create);
                 BinaryWriter bw = new BinaryWriter(fs);
@@ -127,9 +124,6 @@ namespace HotelReservationSoftware
             stOutput = strB.ToString();
             try
             {
-                //UTF8Encoding utf8 = new UTF8Encoding();
-                //Encoding utf16 = Encoding.GetEncoding(866);
-                //byte[] output = utf8.GetBytes(stOutput);
                 byte[] output = Encoding.Default.GetBytes(stOutput);
                 FileStream fs = new FileStream(filename, FileMode.Create);
                 BinaryWriter bw = new BinaryWriter(fs);
@@ -178,13 +172,11 @@ namespace HotelReservationSoftware
             // Export to Excel file
             if (rbExcel.Checked)
             {
-               saveFileDialog.Filter = "Excel Documents (*.xls)|*.xls";
-               saveFileDialog.FileName = fileName + ".xlsx";
+                saveFileDialog.Filter = "Excel Documents (*.xls)|*.xls";
+                saveFileDialog.FileName = fileName + ".xlsx";
                 
-                    //ToExcel(DataGridView, "d:\\bookings.xlsx");
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    //ToCsV(DataGridView, saveFileDialog.FileName);
                     ToExcel(DataGridView, saveFileDialog.FileName);
                     ShowFile(saveFileDialog.FileName, "Excel");
                 }
@@ -233,7 +225,7 @@ namespace HotelReservationSoftware
 
                             Excel.Workbooks workbooks = excelApp.Workbooks;
                             Excel.Workbook sheet = workbooks.Open(excelSheet);
-                            
+
                             break;
                         }
 

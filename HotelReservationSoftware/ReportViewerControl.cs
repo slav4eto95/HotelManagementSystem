@@ -29,7 +29,6 @@ namespace HotelReservationSoftware
             EndDate = end;
         }
 
-        // TODO: 20180819
         public ReportViewerControl(string reportName, Booking booking, List<BookedRoom> listRooms, List<BookedService> listServices)
         {
             InitializeComponent();
@@ -152,25 +151,20 @@ namespace HotelReservationSoftware
                     }
                 case "Receipt":
                     {
-                        //AllReservationsDataSetTableAdapters.BookingsTableAdapter bookingsTableAdapter = new AllReservationsDataSetTableAdapters.BookingsTableAdapter();
-                        //AllReservationsDataSet allReservationsDataSet = new AllReservationsDataSet();
                         Reports.Receipt receiptReport = new Reports.Receipt();
-
-                        //bookingsTableAdapter.Fill(allReservationsDataSet.Bookings);
-                        //receiptReport.SetDataSource(allReservationsDataSet);
 
                         string guestName;
                         string guestAddress;
                         string guestCity;
                         DateTime date = DateTime.Now.Date;
-                        
+
                         using (var db = new HotelManagementSystemEntities())
                         {
                             var guest = db.Guests.Where(g => g.GuestID == Booking.GuestID).FirstOrDefault();
                             guestName = guest.FirstName + " " + guest.MiddleName + " " + guest.LastName;
                             guestAddress = guest.Address;
                             guestCity = guest.City + ", " + guest.Country;
-                            
+
                         }
 
                         receiptReport.SetParameterValue("GuestName", guestName);
@@ -182,7 +176,7 @@ namespace HotelReservationSoftware
                         receiptReport.SetParameterValue("ReservationDate", Booking.BookDate.ToShortDateString());
 
                         decimal bookedRoomsSum = 1;
-                        
+
                         using (var db = new HotelManagementSystemEntities())
                         {
                             foreach (var item in ListRooms)

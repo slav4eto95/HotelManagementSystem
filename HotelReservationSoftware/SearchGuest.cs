@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace HotelReservationSoftware
@@ -94,7 +90,7 @@ namespace HotelReservationSoftware
             FirstName = txtFirstName.Text.ToString();
             MiddleName = txtMiddleName.Text.ToString();
             LastName = txtLastName.Text.ToString();
-            List<String> list = new List<string>();
+            List<string> list = new List<string>();
 
             list.Add(FirstName);
             list.Add(MiddleName);

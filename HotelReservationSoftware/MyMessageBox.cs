@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Windows.Forms;
 
 namespace HotelReservationSoftware
 {
     public static class MyMessageBox
     {
-        public static System.Windows.Forms.DialogResult ShowMessage(string message, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon)
+        public static DialogResult ShowMessage(string message, string caption, System.Windows.Forms.MessageBoxButtons buttons, System.Windows.Forms.MessageBoxIcon icon)
         {
-            System.Windows.Forms.DialogResult dialogResult = System.Windows.Forms.DialogResult.None;
+            DialogResult dialogResult = DialogResult.None;
 
             switch (buttons)
             {
-                case System.Windows.Forms.MessageBoxButtons.YesNo:
+                case MessageBoxButtons.YesNo:
                     using (frmCustomMessageBoxYesNo msg = new frmCustomMessageBoxYesNo())
                     {
                         msg.Text = caption;
@@ -28,7 +25,7 @@ namespace HotelReservationSoftware
                         dialogResult = msg.ShowDialog();
                     }
                     break;
-                case System.Windows.Forms.MessageBoxButtons.OK:
+                case MessageBoxButtons.OK:
                     using (frmCustomMessageBoxOk msg = new frmCustomMessageBoxOk())
                     {
                         msg.Text = caption;

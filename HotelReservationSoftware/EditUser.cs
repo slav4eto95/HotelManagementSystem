@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Data;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace HotelReservationSoftware
 {
     public partial class frmEditUser : Form
     {
-        HotelManagementSystemEntities db;
-        Helpers helpers;
-        frmAllUsers frmAllUsers;
-        Users Users;
+        private HotelManagementSystemEntities Db;
+        private Helpers Helpers;
+        private frmAllUsers FrmAllUsers;
+        private Users Users;
 
         // If true, the form will be with empty controls.
         // In other case, the form will fill the controls with proper information. 
-        public bool isEmpty = true;
+        public bool IsEmpty;
 
         // Get the user id of the selected row.
         public int UserID;
@@ -23,10 +22,12 @@ namespace HotelReservationSoftware
         {
             InitializeComponent();
 
-            db = new HotelManagementSystemEntities();
-            helpers = new Helpers();
-            frmAllUsers = new frmAllUsers(userLevel);
+            Db = new HotelManagementSystemEntities();
+            Helpers = new Helpers();
+            FrmAllUsers = new frmAllUsers(userLevel);
             Users = new Users();
+
+            IsEmpty = true;
 
             // TODO: This line of code loads data into the 'userLevelsDataSet.UserLevels' table. You can move, or remove it, as needed.
             this.userLevelsTableAdapter1.Fill(this.userLevelsDataSet.UserLevels);
@@ -49,13 +50,13 @@ namespace HotelReservationSoftware
         {
             if (!txtName.Text.Equals("") || !txtUserName.Text.Equals("") || !txtPassword.Text.Equals(""))
             {
-                isEmpty = false;
+                IsEmpty = false;
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (isEmpty)
+            if (IsEmpty)
             {
                 AddUserToDatabase();
             }
@@ -111,7 +112,7 @@ namespace HotelReservationSoftware
                 bool isAdded = Users.AddUser(user);
                 if (isAdded)
                 {
-                    frmAllUsers.DisplayUserInfo();
+                    FrmAllUsers.DisplayUserInfo();
                     MyMessageBox.ShowMessage("Потребителят е добавен успешно!", "Поздравления", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
@@ -141,7 +142,7 @@ namespace HotelReservationSoftware
             bool isUpdated = Users.UpdateUser(localUserID, newName, newUserName, newPassword, newUserLevel);
             if (isUpdated)
             {
-                frmAllUsers.DisplayUserInfo();
+                FrmAllUsers.DisplayUserInfo();
                 MyMessageBox.ShowMessage("Промените бяха запаметени успешно!", "Успешно запазени промени", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 Close();
             }

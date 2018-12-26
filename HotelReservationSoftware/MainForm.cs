@@ -22,8 +22,8 @@ namespace HotelReservationSoftware
         private void frmMain_Load(object sender, EventArgs e)
         {
             if (UserLevelID == 2) // manager
-                rbBackup.Enabled = rbRestore.Enabled = false; 
-            else if(UserLevelID == 3) // reception
+                rbBackup.Enabled = rbRestore.Enabled = false;
+            else if (UserLevelID == 3) // reception
                 rbUsers.Enabled = rbChangePassword.Enabled = rbBackup.Enabled = rbRestore.Enabled = false;
         }
 
@@ -35,10 +35,6 @@ namespace HotelReservationSoftware
         private void rbUsers_Click(object sender, EventArgs e)
         {
             frmAllUsers frmAllUsers = new frmAllUsers(UserLevelID);
-            /*frmAllUsers.Dock = DockStyle.Fill;
-            frmAllUsers.TopLevel = false;
-            frmAllUsers.AutoScroll = true;
-            panelMainContent.Controls.Add(frmAllUsers);*/
             frmAllUsers.Show();
         }
 
@@ -152,10 +148,7 @@ namespace HotelReservationSoftware
         }
 
         private void rbRoomSearch_Click(object sender, EventArgs e)
-        {/*
-            frmRooms frmRooms = new frmRooms();
-            frmRooms.Show();
-            */
+        {
             panelMainContent.Controls.Clear();
 
             SearchCenterControl control1 = new SearchCenterControl(this, true);
@@ -190,7 +183,7 @@ namespace HotelReservationSoftware
             panelLeft.Controls.Clear();
 
             control1.Dock = DockStyle.Fill;
-            
+
             panelLeft.Controls.Add(control1);
             control1.Show();
         }

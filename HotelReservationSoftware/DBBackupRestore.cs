@@ -1,15 +1,13 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Management.Common;
+using Microsoft.SqlServer.Management.Smo;
+using System;
 using System.Data;
 using System.Windows.Forms;
-using Microsoft.SqlServer.Management.Smo;
-using System.IO;
-using Microsoft.SqlServer.Management.Common;
 
 namespace HotelReservationSoftware
 {
     public partial class frmDBBackupRestore : Form
     {
-        
         private static Server Server;
         //private string BackupPath = Environment.CurrentDirectory + "\\Backups";
 
@@ -25,7 +23,7 @@ namespace HotelReservationSoftware
             cmbServer.Enabled = false;
             cmbDataBase.Enabled = false;
 
-            if ( frmMain.IsButtonBackupClicked )
+            if (frmMain.IsButtonBackupClicked)
             {
                 btn_restore.Enabled = false;
             }
@@ -196,7 +194,7 @@ namespace HotelReservationSoftware
                         bkpDatabase.Devices.Add(bkpDevice);
                         // Perform the backup
                         bkpDatabase.SqlBackup(Server);
-                        MyMessageBox.ShowMessage("Backup of Database " + cmbDataBase.Text + " successfully created", "Server", 
+                        MyMessageBox.ShowMessage("Backup of Database " + cmbDataBase.Text + " successfully created", "Server",
                                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -264,9 +262,9 @@ namespace HotelReservationSoftware
                         rstDatabase.ReplaceDatabase = true;
                         // Perform the restore
                         rstDatabase.SqlRestore(Server);
-                        
+
                         Server.Refresh();
-                        MyMessageBox.ShowMessage("Database " + cmbDataBase.Text + " succefully restored", "Server", 
+                        MyMessageBox.ShowMessage("Database " + cmbDataBase.Text + " succefully restored", "Server",
                                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }

@@ -15,6 +15,9 @@ namespace HotelReservationSoftware
         public frmRooms()
         {
             InitializeComponent();
+
+            dtFromDate = new DateTime();
+            dtToDate = new DateTime();
         }
 
         private void Rooms_Load(object sender, EventArgs e)
@@ -89,7 +92,7 @@ namespace HotelReservationSoftware
             string day = dayOfWeek.ToString();
             int columnIndex = dgvRooms.Columns.Add(dayOfWeek.ToString(),
                                     currentDay + "\n" + day.Remove(3, day.Length - 3));
-            
+
             if (dayOfWeek == DayOfWeek.Saturday || dayOfWeek == DayOfWeek.Sunday)
             {
                 dgvRooms.Columns[columnIndex].DefaultCellStyle.BackColor = ControlPaint.Light(Color.LightGray);
@@ -106,11 +109,11 @@ namespace HotelReservationSoftware
                                 join g in db.Guests on b.GuestID equals g.GuestID
                                 select new
                                 {
-                                    BookingID = b.BookingID,
-                                    RoomID = br.RoomID,
-                                    CheckIn = b.CheckIn,
-                                    CheckOut = b.CheckOut,
-                                    Nights = b.Nights,
+                                    b.BookingID,
+                                    br.RoomID,
+                                    b.CheckIn,
+                                    b.CheckOut,
+                                    b.Nights,
                                     GuestName = g.FirstName + " " + g.MiddleName + " " + g.LastName
                                 }).ToList();
 
@@ -126,7 +129,7 @@ namespace HotelReservationSoftware
                             // Get only the date from the header text - without the day of the week
                             string columnDate = (dgvRooms.Columns[j].HeaderText.ToString()).Remove(9);
 
-                            if (booking.RoomID == Int16.Parse(dgvRooms.Rows[i].Cells[0].Value.ToString()))
+                            if (booking.RoomID == short.Parse(dgvRooms.Rows[i].Cells[0].Value.ToString()))
                             {
                                 if (IsBetween(columnDate, dateCheckIn, dateCheckOut))
                                 {

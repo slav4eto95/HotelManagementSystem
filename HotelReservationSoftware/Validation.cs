@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace HotelReservationSoftware
 {
-    class Validation
+    internal class Validation
     {
         public bool isPasswordMatch(string pass, string pass1)
         {
@@ -85,7 +85,7 @@ namespace HotelReservationSoftware
             for (i = 0; i < len; i++)
             {
                 // get the current number in the string
-                currentNumber = Int16.Parse(creditCardNumber[i].ToString());
+                currentNumber = short.Parse(creditCardNumber[i].ToString());
 
                 // if 'i' is even, save the current number in sumOfEvens and add it to the whole sum of digits.
                 // Otherwise, multiply the current number by 2 and check if the result number is 2-digits long.
@@ -100,7 +100,7 @@ namespace HotelReservationSoftware
                     sumOfOdds = currentNumber * 2;
                     sumOdd = sumOfOdds.ToString();
                     if (sumOdd.Length == 2)
-                        sumOfOdds = Int16.Parse(sumOdd[0].ToString()) + Int16.Parse(sumOdd[1].ToString());
+                        sumOfOdds = short.Parse(sumOdd[0].ToString()) + short.Parse(sumOdd[1].ToString());
                     sum += sumOfOdds;
                 }
             }

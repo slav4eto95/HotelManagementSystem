@@ -243,7 +243,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BookedServiceDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BookedServicesDTO.cs" />
     <Compile Include="Booking.cs">
       <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
     </Compile>
@@ -603,7 +602,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserLevelsDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="UserLevelsDTO.cs" />
     <Compile Include="DBHelpers\Users.cs" />
     <Compile Include="UsersDTO.cs" />
     <Compile Include="Validation.cs" />

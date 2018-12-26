@@ -20,9 +20,9 @@ namespace HotelReservationSoftware
 
         private void Countries_Load(object sender, EventArgs e)
         {
-            ClearPanelContent();            
+            ClearPanelContent();
         }
-        
+
         private void btnShowStatistics_Click(object sender, EventArgs e)
         {
             ClearPanelContent();

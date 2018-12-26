@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace HotelReservationSoftware
@@ -122,7 +118,7 @@ namespace HotelReservationSoftware
                             // Get only the date from the header text - without the day of the week
                             string columnDate = (dgvRooms.Columns[j].HeaderText.ToString()).Remove(9);
 
-                            if (booking.RoomID == Int16.Parse(dgvRooms.Rows[i].Cells[0].Value.ToString()))
+                            if (booking.RoomID == short.Parse(dgvRooms.Rows[i].Cells[0].Value.ToString()))
                             {
                                 if (IsBetween(columnDate, dateCheckIn, dateCheckOut))
                                 {
