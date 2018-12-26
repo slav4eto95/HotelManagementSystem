@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DailyOccupancyDataSet" targetNamespace="http://tempuri.org/DailyOccupancyDataSet.xsd" xmlns:mstns="http://tempuri.org/DailyOccupancyDataSet.xsd" xmlns="http://tempuri.org/DailyOccupancyDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HotelManagementSystemConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HotelManagementSystemConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HotelReservationSoftware.Properties.Settings.GlobalReference.Default.HotelManagementSystemConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DailyOccupancyViewTableAdapter" GeneratorDataComponentClassName="DailyOccupancyViewTableAdapter" Name="DailyOccupancyView" UserDataComponentName="DailyOccupancyViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HotelManagementSystemConnectionString (Settings)" DbObjectName="HotelManagementSystem.dbo.DailyOccupancyView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT RoomID, GuestName, CheckIn, CheckOut, AdultsNo, ChildNo FROM dbo.DailyOccupancyView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RoomID" DataSetColumn="RoomID" />
+              <Mapping SourceColumn="GuestName" DataSetColumn="GuestName" />
+              <Mapping SourceColumn="CheckIn" DataSetColumn="CheckIn" />
+              <Mapping SourceColumn="CheckOut" DataSetColumn="CheckOut" />
+              <Mapping SourceColumn="AdultsNo" DataSetColumn="AdultsNo" />
+              <Mapping SourceColumn="ChildNo" DataSetColumn="ChildNo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DailyOccupancyDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DailyOccupancyDataSet" msprop:Generator_UserDSName="DailyOccupancyDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DailyOccupancyView" msprop:Generator_TableClassName="DailyOccupancyViewDataTable" msprop:Generator_TableVarName="tableDailyOccupancyView" msprop:Generator_TablePropName="DailyOccupancyView" msprop:Generator_RowDeletingName="DailyOccupancyViewRowDeleting" msprop:Generator_RowChangingName="DailyOccupancyViewRowChanging" msprop:Generator_RowEvHandlerName="DailyOccupancyViewRowChangeEventHandler" msprop:Generator_RowDeletedName="DailyOccupancyViewRowDeleted" msprop:Generator_UserTableName="DailyOccupancyView" msprop:Generator_RowChangedName="DailyOccupancyViewRowChanged" msprop:Generator_RowEvArgName="DailyOccupancyViewRowChangeEvent" msprop:Generator_RowClassName="DailyOccupancyViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RoomID" msprop:Generator_ColumnVarNameInTable="columnRoomID" msprop:Generator_ColumnPropNameInRow="RoomID" msprop:Generator_ColumnPropNameInTable="RoomIDColumn" msprop:Generator_UserColumnName="RoomID" type="xs:int" />
+              <xs:element name="GuestName" msprop:Generator_ColumnVarNameInTable="columnGuestName" msprop:Generator_ColumnPropNameInRow="GuestName" msprop:Generator_ColumnPropNameInTable="GuestNameColumn" msprop:Generator_UserColumnName="GuestName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CheckIn" msprop:Generator_ColumnVarNameInTable="columnCheckIn" msprop:Generator_ColumnPropNameInRow="CheckIn" msprop:Generator_ColumnPropNameInTable="CheckInColumn" msprop:Generator_UserColumnName="CheckIn" type="xs:dateTime" />
+              <xs:element name="CheckOut" msprop:Generator_ColumnVarNameInTable="columnCheckOut" msprop:Generator_ColumnPropNameInRow="CheckOut" msprop:Generator_ColumnPropNameInTable="CheckOutColumn" msprop:Generator_UserColumnName="CheckOut" type="xs:dateTime" />
+              <xs:element name="AdultsNo" msprop:Generator_ColumnVarNameInTable="columnAdultsNo" msprop:Generator_ColumnPropNameInRow="AdultsNo" msprop:Generator_ColumnPropNameInTable="AdultsNoColumn" msprop:Generator_UserColumnName="AdultsNo" type="xs:int" minOccurs="0" />
+              <xs:element name="ChildNo" msprop:Generator_ColumnVarNameInTable="columnChildNo" msprop:Generator_ColumnPropNameInRow="ChildNo" msprop:Generator_ColumnPropNameInTable="ChildNoColumn" msprop:Generator_UserColumnName="ChildNo" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

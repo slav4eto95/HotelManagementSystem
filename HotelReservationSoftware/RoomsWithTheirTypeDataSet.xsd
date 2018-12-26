@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RoomsWithTheirTypeDataSet" targetNamespace="http://tempuri.org/RoomsWithTheirTypeDataSet.xsd" xmlns:mstns="http://tempuri.org/RoomsWithTheirTypeDataSet.xsd" xmlns="http://tempuri.org/RoomsWithTheirTypeDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HotelManagementSystemConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HotelManagementSystemConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HotelReservationSoftware.Properties.Settings.GlobalReference.Default.HotelManagementSystemConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RoomsTableAdapter" GeneratorDataComponentClassName="RoomsTableAdapter" Name="Rooms" UserDataComponentName="RoomsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HotelManagementSystemConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Rooms.RoomID, RoomTypes.RoomTypeDesc AS RoomType, RoomTypes.RoomPrice, RoomTypes.NumberOfAdults, RoomTypes.NumberOfBeds, RoomTypes.NumberOfChildren, RoomTypes.BedType, 
+                  (CASE WHEN RoomTypes.CanSmoke = 0 THEN 'Не' WHEN RoomTypes.CanSmoke = 1 THEN 'Да' END) AS SmokingAllowed, RoomTypes.RoomAddDescription
+FROM     Rooms INNER JOIN
+                  RoomTypes ON Rooms.RoomTypeID = RoomTypes.RoomTypeID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RoomID" DataSetColumn="RoomID" />
+              <Mapping SourceColumn="RoomPrice" DataSetColumn="RoomPrice" />
+              <Mapping SourceColumn="NumberOfAdults" DataSetColumn="NumberOfAdults" />
+              <Mapping SourceColumn="NumberOfBeds" DataSetColumn="NumberOfBeds" />
+              <Mapping SourceColumn="NumberOfChildren" DataSetColumn="NumberOfChildren" />
+              <Mapping SourceColumn="BedType" DataSetColumn="BedType" />
+              <Mapping SourceColumn="RoomAddDescription" DataSetColumn="RoomAddDescription" />
+              <Mapping SourceColumn="RoomType" DataSetColumn="RoomType" />
+              <Mapping SourceColumn="SmokingAllowed" DataSetColumn="SmokingAllowed" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RoomsWithTheirTypeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="RoomsWithTheirTypeDataSet" msprop:Generator_UserDSName="RoomsWithTheirTypeDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Rooms" msprop:Generator_TableClassName="RoomsDataTable" msprop:Generator_TableVarName="tableRooms" msprop:Generator_RowChangedName="RoomsRowChanged" msprop:Generator_TablePropName="Rooms" msprop:Generator_RowDeletingName="RoomsRowDeleting" msprop:Generator_RowChangingName="RoomsRowChanging" msprop:Generator_RowEvHandlerName="RoomsRowChangeEventHandler" msprop:Generator_RowDeletedName="RoomsRowDeleted" msprop:Generator_RowClassName="RoomsRow" msprop:Generator_UserTableName="Rooms" msprop:Generator_RowEvArgName="RoomsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RoomID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRoomID" msprop:Generator_ColumnPropNameInRow="RoomID" msprop:Generator_ColumnPropNameInTable="RoomIDColumn" msprop:Generator_UserColumnName="RoomID" type="xs:int" />
+              <xs:element name="RoomPrice" msprop:Generator_ColumnVarNameInTable="columnRoomPrice" msprop:Generator_ColumnPropNameInRow="RoomPrice" msprop:Generator_ColumnPropNameInTable="RoomPriceColumn" msprop:Generator_UserColumnName="RoomPrice" type="xs:decimal" />
+              <xs:element name="NumberOfAdults" msprop:Generator_ColumnVarNameInTable="columnNumberOfAdults" msprop:Generator_ColumnPropNameInRow="NumberOfAdults" msprop:Generator_ColumnPropNameInTable="NumberOfAdultsColumn" msprop:Generator_UserColumnName="NumberOfAdults" type="xs:int" />
+              <xs:element name="NumberOfBeds" msprop:Generator_ColumnVarNameInTable="columnNumberOfBeds" msprop:Generator_ColumnPropNameInRow="NumberOfBeds" msprop:Generator_ColumnPropNameInTable="NumberOfBedsColumn" msprop:Generator_UserColumnName="NumberOfBeds" type="xs:int" />
+              <xs:element name="NumberOfChildren" msprop:Generator_ColumnVarNameInTable="columnNumberOfChildren" msprop:Generator_ColumnPropNameInRow="NumberOfChildren" msprop:Generator_ColumnPropNameInTable="NumberOfChildrenColumn" msprop:Generator_UserColumnName="NumberOfChildren" type="xs:int" minOccurs="0" />
+              <xs:element name="BedType" msprop:Generator_ColumnVarNameInTable="columnBedType" msprop:Generator_ColumnPropNameInRow="BedType" msprop:Generator_ColumnPropNameInTable="BedTypeColumn" msprop:Generator_UserColumnName="BedType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RoomAddDescription" msprop:Generator_ColumnVarNameInTable="columnRoomAddDescription" msprop:Generator_ColumnPropNameInRow="RoomAddDescription" msprop:Generator_ColumnPropNameInTable="RoomAddDescriptionColumn" msprop:Generator_UserColumnName="RoomAddDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RoomType" msprop:Generator_ColumnVarNameInTable="columnRoomType" msprop:Generator_ColumnPropNameInRow="RoomType" msprop:Generator_ColumnPropNameInTable="RoomTypeColumn" msprop:Generator_UserColumnName="RoomType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SmokingAllowed" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSmokingAllowed" msprop:Generator_ColumnPropNameInRow="SmokingAllowed" msprop:Generator_ColumnPropNameInTable="SmokingAllowedColumn" msprop:Generator_UserColumnName="SmokingAllowed" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Rooms" />
+      <xs:field xpath="mstns:RoomID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

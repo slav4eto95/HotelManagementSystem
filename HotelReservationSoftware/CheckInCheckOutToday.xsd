@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CheckInCheckOutToday" targetNamespace="http://tempuri.org/CheckInCheckOutToday.xsd" xmlns:mstns="http://tempuri.org/CheckInCheckOutToday.xsd" xmlns="http://tempuri.org/CheckInCheckOutToday.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HotelManagementSystemConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HotelManagementSystemConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HotelReservationSoftware.Properties.Settings.GlobalReference.Default.HotelManagementSystemConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TodayCheckInTableAdapter" GeneratorDataComponentClassName="TodayCheckInTableAdapter" Name="TodayCheckIn" UserDataComponentName="TodayCheckInTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HotelManagementSystemConnectionString (Settings)" DbObjectName="HotelManagementSystem.dbo.TodayCheckIn" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT BookingStatusName, GuestName, CheckIn, CheckOut, Nights, HasCar, BookDate, Notes, CreditCardName, CreditCardNo, CreditCardSecurityCode, CreditCardExpiry, ReferenceNumber, InvoiceNumber, TotalSum, RestSum
+FROM     TodayCheckIn
+WHERE  (CheckIn = CONVERT(date, GETDATE()))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BookingStatusName" DataSetColumn="BookingStatusName" />
+              <Mapping SourceColumn="GuestName" DataSetColumn="GuestName" />
+              <Mapping SourceColumn="CheckIn" DataSetColumn="CheckIn" />
+              <Mapping SourceColumn="CheckOut" DataSetColumn="CheckOut" />
+              <Mapping SourceColumn="Nights" DataSetColumn="Nights" />
+              <Mapping SourceColumn="HasCar" DataSetColumn="HasCar" />
+              <Mapping SourceColumn="BookDate" DataSetColumn="BookDate" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="CreditCardName" DataSetColumn="CreditCardName" />
+              <Mapping SourceColumn="CreditCardNo" DataSetColumn="CreditCardNo" />
+              <Mapping SourceColumn="CreditCardSecurityCode" DataSetColumn="CreditCardSecurityCode" />
+              <Mapping SourceColumn="CreditCardExpiry" DataSetColumn="CreditCardExpiry" />
+              <Mapping SourceColumn="ReferenceNumber" DataSetColumn="ReferenceNumber" />
+              <Mapping SourceColumn="InvoiceNumber" DataSetColumn="InvoiceNumber" />
+              <Mapping SourceColumn="TotalSum" DataSetColumn="TotalSum" />
+              <Mapping SourceColumn="RestSum" DataSetColumn="RestSum" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TodayCheckOutTableAdapter" GeneratorDataComponentClassName="TodayCheckOutTableAdapter" Name="TodayCheckOut" UserDataComponentName="TodayCheckOutTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HotelManagementSystemConnectionString (Settings)" DbObjectName="HotelManagementSystem.dbo.TodayCheckOut" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT BookingStatusName, GuestName, CheckIn, CheckOut, Nights, HasCar, BookDate, Notes, CreditCardName, CreditCardNo, CreditCardSecurityCode, CreditCardExpiry, ReferenceNumber, InvoiceNumber, TotalSum, RestSum
+FROM     TodayCheckOut
+WHERE  (CheckOut = CONVERT(date, GETDATE()))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BookingStatusName" DataSetColumn="BookingStatusName" />
+              <Mapping SourceColumn="GuestName" DataSetColumn="GuestName" />
+              <Mapping SourceColumn="CheckIn" DataSetColumn="CheckIn" />
+              <Mapping SourceColumn="CheckOut" DataSetColumn="CheckOut" />
+              <Mapping SourceColumn="Nights" DataSetColumn="Nights" />
+              <Mapping SourceColumn="HasCar" DataSetColumn="HasCar" />
+              <Mapping SourceColumn="BookDate" DataSetColumn="BookDate" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="CreditCardName" DataSetColumn="CreditCardName" />
+              <Mapping SourceColumn="CreditCardNo" DataSetColumn="CreditCardNo" />
+              <Mapping SourceColumn="CreditCardSecurityCode" DataSetColumn="CreditCardSecurityCode" />
+              <Mapping SourceColumn="CreditCardExpiry" DataSetColumn="CreditCardExpiry" />
+              <Mapping SourceColumn="ReferenceNumber" DataSetColumn="ReferenceNumber" />
+              <Mapping SourceColumn="InvoiceNumber" DataSetColumn="InvoiceNumber" />
+              <Mapping SourceColumn="TotalSum" DataSetColumn="TotalSum" />
+              <Mapping SourceColumn="RestSum" DataSetColumn="RestSum" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CheckInCheckOutToday" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CheckInCheckOutToday" msprop:Generator_UserDSName="CheckInCheckOutToday">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TodayCheckIn" msprop:Generator_TableClassName="TodayCheckInDataTable" msprop:Generator_TableVarName="tableTodayCheckIn" msprop:Generator_RowChangedName="TodayCheckInRowChanged" msprop:Generator_TablePropName="TodayCheckIn" msprop:Generator_RowDeletingName="TodayCheckInRowDeleting" msprop:Generator_RowChangingName="TodayCheckInRowChanging" msprop:Generator_RowEvHandlerName="TodayCheckInRowChangeEventHandler" msprop:Generator_RowDeletedName="TodayCheckInRowDeleted" msprop:Generator_RowClassName="TodayCheckInRow" msprop:Generator_UserTableName="TodayCheckIn" msprop:Generator_RowEvArgName="TodayCheckInRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BookingStatusName" msprop:Generator_ColumnVarNameInTable="columnBookingStatusName" msprop:Generator_ColumnPropNameInRow="BookingStatusName" msprop:Generator_ColumnPropNameInTable="BookingStatusNameColumn" msprop:Generator_UserColumnName="BookingStatusName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GuestName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGuestName" msprop:Generator_ColumnPropNameInRow="GuestName" msprop:Generator_ColumnPropNameInTable="GuestNameColumn" msprop:Generator_UserColumnName="GuestName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="767" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CheckIn" msprop:Generator_ColumnVarNameInTable="columnCheckIn" msprop:Generator_ColumnPropNameInRow="CheckIn" msprop:Generator_ColumnPropNameInTable="CheckInColumn" msprop:Generator_UserColumnName="CheckIn" type="xs:dateTime" />
+              <xs:element name="CheckOut" msprop:Generator_ColumnVarNameInTable="columnCheckOut" msprop:Generator_ColumnPropNameInRow="CheckOut" msprop:Generator_ColumnPropNameInTable="CheckOutColumn" msprop:Generator_UserColumnName="CheckOut" type="xs:dateTime" />
+              <xs:element name="Nights" msprop:Generator_ColumnVarNameInTable="columnNights" msprop:Generator_ColumnPropNameInRow="Nights" msprop:Generator_ColumnPropNameInTable="NightsColumn" msprop:Generator_UserColumnName="Nights" type="xs:int" />
+              <xs:element name="HasCar" msprop:Generator_ColumnVarNameInTable="columnHasCar" msprop:Generator_ColumnPropNameInRow="HasCar" msprop:Generator_ColumnPropNameInTable="HasCarColumn" msprop:Generator_UserColumnName="HasCar" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BookDate" msprop:Generator_ColumnVarNameInTable="columnBookDate" msprop:Generator_ColumnPropNameInRow="BookDate" msprop:Generator_ColumnPropNameInTable="BookDateColumn" msprop:Generator_UserColumnName="BookDate" type="xs:dateTime" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreditCardName" msprop:Generator_ColumnVarNameInTable="columnCreditCardName" msprop:Generator_ColumnPropNameInRow="CreditCardName" msprop:Generator_ColumnPropNameInTable="CreditCardNameColumn" msprop:Generator_UserColumnName="CreditCardName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreditCardNo" msprop:Generator_ColumnVarNameInTable="columnCreditCardNo" msprop:Generator_ColumnPropNameInRow="CreditCardNo" msprop:Generator_ColumnPropNameInTable="CreditCardNoColumn" msprop:Generator_UserColumnName="CreditCardNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreditCardSecurityCode" msprop:Generator_ColumnVarNameInTable="columnCreditCardSecurityCode" msprop:Generator_ColumnPropNameInRow="CreditCardSecurityCode" msprop:Generator_ColumnPropNameInTable="CreditCardSecurityCodeColumn" msprop:Generator_UserColumnName="CreditCardSecurityCode" type="xs:int" minOccurs="0" />
+              <xs:element name="CreditCardExpiry" msprop:Generator_ColumnVarNameInTable="columnCreditCardExpiry" msprop:Generator_ColumnPropNameInRow="CreditCardExpiry" msprop:Generator_ColumnPropNameInTable="CreditCardExpiryColumn" msprop:Generator_UserColumnName="CreditCardExpiry" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReferenceNumber" msprop:Generator_ColumnVarNameInTable="columnReferenceNumber" msprop:Generator_ColumnPropNameInRow="ReferenceNumber" msprop:Generator_ColumnPropNameInTable="ReferenceNumberColumn" msprop:Generator_UserColumnName="ReferenceNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceNumber" msprop:Generator_ColumnVarNameInTable="columnInvoiceNumber" msprop:Generator_ColumnPropNameInRow="InvoiceNumber" msprop:Generator_ColumnPropNameInTable="InvoiceNumberColumn" msprop:Generator_UserColumnName="InvoiceNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalSum" msprop:Generator_ColumnVarNameInTable="columnTotalSum" msprop:Generator_ColumnPropNameInRow="TotalSum" msprop:Generator_ColumnPropNameInTable="TotalSumColumn" msprop:Generator_UserColumnName="TotalSum" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RestSum" msprop:Generator_ColumnVarNameInTable="columnRestSum" msprop:Generator_ColumnPropNameInRow="RestSum" msprop:Generator_ColumnPropNameInTable="RestSumColumn" msprop:Generator_UserColumnName="RestSum" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TodayCheckOut" msprop:Generator_TableClassName="TodayCheckOutDataTable" msprop:Generator_TableVarName="tableTodayCheckOut" msprop:Generator_RowChangedName="TodayCheckOutRowChanged" msprop:Generator_TablePropName="TodayCheckOut" msprop:Generator_RowDeletingName="TodayCheckOutRowDeleting" msprop:Generator_RowChangingName="TodayCheckOutRowChanging" msprop:Generator_RowEvHandlerName="TodayCheckOutRowChangeEventHandler" msprop:Generator_RowDeletedName="TodayCheckOutRowDeleted" msprop:Generator_RowClassName="TodayCheckOutRow" msprop:Generator_UserTableName="TodayCheckOut" msprop:Generator_RowEvArgName="TodayCheckOutRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BookingStatusName" msprop:Generator_ColumnVarNameInTable="columnBookingStatusName" msprop:Generator_ColumnPropNameInRow="BookingStatusName" msprop:Generator_ColumnPropNameInTable="BookingStatusNameColumn" msprop:Generator_UserColumnName="BookingStatusName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GuestName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGuestName" msprop:Generator_ColumnPropNameInRow="GuestName" msprop:Generator_ColumnPropNameInTable="GuestNameColumn" msprop:Generator_UserColumnName="GuestName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="767" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CheckIn" msprop:Generator_ColumnVarNameInTable="columnCheckIn" msprop:Generator_ColumnPropNameInRow="CheckIn" msprop:Generator_ColumnPropNameInTable="CheckInColumn" msprop:Generator_UserColumnName="CheckIn" type="xs:dateTime" />
+              <xs:element name="CheckOut" msprop:Generator_ColumnVarNameInTable="columnCheckOut" msprop:Generator_ColumnPropNameInRow="CheckOut" msprop:Generator_ColumnPropNameInTable="CheckOutColumn" msprop:Generator_UserColumnName="CheckOut" type="xs:dateTime" />
+              <xs:element name="Nights" msprop:Generator_ColumnVarNameInTable="columnNights" msprop:Generator_ColumnPropNameInRow="Nights" msprop:Generator_ColumnPropNameInTable="NightsColumn" msprop:Generator_UserColumnName="Nights" type="xs:int" />
+              <xs:element name="HasCar" msprop:Generator_ColumnVarNameInTable="columnHasCar" msprop:Generator_ColumnPropNameInRow="HasCar" msprop:Generator_ColumnPropNameInTable="HasCarColumn" msprop:Generator_UserColumnName="HasCar" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BookDate" msprop:Generator_ColumnVarNameInTable="columnBookDate" msprop:Generator_ColumnPropNameInRow="BookDate" msprop:Generator_ColumnPropNameInTable="BookDateColumn" msprop:Generator_UserColumnName="BookDate" type="xs:dateTime" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreditCardName" msprop:Generator_ColumnVarNameInTable="columnCreditCardName" msprop:Generator_ColumnPropNameInRow="CreditCardName" msprop:Generator_ColumnPropNameInTable="CreditCardNameColumn" msprop:Generator_UserColumnName="CreditCardName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreditCardNo" msprop:Generator_ColumnVarNameInTable="columnCreditCardNo" msprop:Generator_ColumnPropNameInRow="CreditCardNo" msprop:Generator_ColumnPropNameInTable="CreditCardNoColumn" msprop:Generator_UserColumnName="CreditCardNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreditCardSecurityCode" msprop:Generator_ColumnVarNameInTable="columnCreditCardSecurityCode" msprop:Generator_ColumnPropNameInRow="CreditCardSecurityCode" msprop:Generator_ColumnPropNameInTable="CreditCardSecurityCodeColumn" msprop:Generator_UserColumnName="CreditCardSecurityCode" type="xs:int" minOccurs="0" />
+              <xs:element name="CreditCardExpiry" msprop:Generator_ColumnVarNameInTable="columnCreditCardExpiry" msprop:Generator_ColumnPropNameInRow="CreditCardExpiry" msprop:Generator_ColumnPropNameInTable="CreditCardExpiryColumn" msprop:Generator_UserColumnName="CreditCardExpiry" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReferenceNumber" msprop:Generator_ColumnVarNameInTable="columnReferenceNumber" msprop:Generator_ColumnPropNameInRow="ReferenceNumber" msprop:Generator_ColumnPropNameInTable="ReferenceNumberColumn" msprop:Generator_UserColumnName="ReferenceNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceNumber" msprop:Generator_ColumnVarNameInTable="columnInvoiceNumber" msprop:Generator_ColumnPropNameInRow="InvoiceNumber" msprop:Generator_ColumnPropNameInTable="InvoiceNumberColumn" msprop:Generator_UserColumnName="InvoiceNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalSum" msprop:Generator_ColumnVarNameInTable="columnTotalSum" msprop:Generator_ColumnPropNameInRow="TotalSum" msprop:Generator_ColumnPropNameInTable="TotalSumColumn" msprop:Generator_UserColumnName="TotalSum" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RestSum" msprop:Generator_ColumnVarNameInTable="columnRestSum" msprop:Generator_ColumnPropNameInRow="RestSum" msprop:Generator_ColumnPropNameInTable="RestSumColumn" msprop:Generator_UserColumnName="RestSum" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

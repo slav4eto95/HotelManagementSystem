@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AllReservationsDataSet" targetNamespace="http://tempuri.org/AllReservationsDataSet.xsd" xmlns:mstns="http://tempuri.org/AllReservationsDataSet.xsd" xmlns="http://tempuri.org/AllReservationsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HotelManagementSystemConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HotelManagementSystemConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HotelReservationSoftware.Properties.Settings.GlobalReference.Default.HotelManagementSystemConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BookingsTableAdapter" GeneratorDataComponentClassName="BookingsTableAdapter" Name="Bookings" UserDataComponentName="BookingsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HotelManagementSystemConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT BookingStatus.BookingStatusName, Guests.FirstName + ' ' + Guests.MiddleName + ' ' + Guests.LastName AS GuestName, Bookings.CheckIn, Bookings.CheckOut, Bookings.Nights, Bookings.HasCar, Bookings.BookDate, 
+                  Guests.Phone, Guests.Email, Bookings.Notes, Bookings.TotalSum, Bookings.RestSum, ReferredBy.ReferredBy, Bookings.BookingID
+FROM     Bookings INNER JOIN
+                  Guests ON Bookings.GuestID = Guests.GuestID INNER JOIN
+                  ReferredBy ON Bookings.ReferredByID = ReferredBy.ReferredByID INNER JOIN
+                  BookingStatus ON Bookings.BookingStatusID = BookingStatus.BookingStatusID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CheckIn" DataSetColumn="CheckIn" />
+              <Mapping SourceColumn="CheckOut" DataSetColumn="CheckOut" />
+              <Mapping SourceColumn="Nights" DataSetColumn="Nights" />
+              <Mapping SourceColumn="HasCar" DataSetColumn="HasCar" />
+              <Mapping SourceColumn="BookDate" DataSetColumn="BookDate" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="TotalSum" DataSetColumn="TotalSum" />
+              <Mapping SourceColumn="RestSum" DataSetColumn="RestSum" />
+              <Mapping SourceColumn="BookingStatusName" DataSetColumn="BookingStatusName" />
+              <Mapping SourceColumn="GuestName" DataSetColumn="GuestName" />
+              <Mapping SourceColumn="Phone" DataSetColumn="Phone" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="ReferredBy" DataSetColumn="ReferredBy" />
+              <Mapping SourceColumn="BookingID" DataSetColumn="BookingID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="HotelManagementSystemConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByGuestName" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByGuestName" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByGuestName">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT BookingStatus.BookingStatusName, Guests.FirstName + ' ' + Guests.MiddleName + ' ' + Guests.LastName AS GuestName, Bookings.CheckIn, Bookings.CheckOut, Bookings.Nights, Bookings.HasCar, Bookings.BookDate, Guests.Phone, 
+                  Guests.Email, Bookings.Notes, Bookings.TotalSum, Bookings.RestSum, ReferredBy.ReferredBy, Bookings.BookingID
+FROM     Bookings INNER JOIN
+                  Guests ON Bookings.GuestID = Guests.GuestID INNER JOIN
+                  ReferredBy ON Bookings.ReferredByID = ReferredBy.ReferredByID INNER JOIN
+                  BookingStatus ON Bookings.BookingStatusID = BookingStatus.BookingStatusID
+WHERE  (Guests.FirstName = @FName) OR
+                  (Guests.MiddleName = @MName) OR
+                  (Guests.LastName = @LName)
+ORDER BY GuestName</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="FName" ColumnName="FirstName" DataSourceName="HotelManagementSystem.dbo.Guests" DataTypeServer="varchar(255)" DbType="AnsiString" Direction="Input" ParameterName="@FName" Precision="0" ProviderType="VarChar" Scale="0" Size="255" SourceColumn="FirstName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MName" ColumnName="MiddleName" DataSourceName="HotelManagementSystem.dbo.Guests" DataTypeServer="varchar(255)" DbType="AnsiString" Direction="Input" ParameterName="@MName" Precision="0" ProviderType="VarChar" Scale="0" Size="255" SourceColumn="MiddleName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="LName" ColumnName="LastName" DataSourceName="HotelManagementSystem.dbo.Guests" DataTypeServer="varchar(255)" DbType="AnsiString" Direction="Input" ParameterName="@LName" Precision="0" ProviderType="VarChar" Scale="0" Size="255" SourceColumn="LastName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BookingStatusTableAdapter" GeneratorDataComponentClassName="BookingStatusTableAdapter" Name="BookingStatus" UserDataComponentName="BookingStatusTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HotelManagementSystemConnectionString (Settings)" DbObjectName="HotelManagementSystem.dbo.BookingStatus" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[BookingStatus] ([BookingStatusName]) VALUES (@BookingStatusName)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BookingStatusName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BookingStatusName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT BookingStatusName FROM dbo.BookingStatus</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BookingStatusName" DataSetColumn="BookingStatusName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReferredByTableAdapter" GeneratorDataComponentClassName="ReferredByTableAdapter" Name="ReferredBy" UserDataComponentName="ReferredByTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HotelManagementSystemConnectionString (Settings)" DbObjectName="HotelManagementSystem.dbo.ReferredBy" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[ReferredBy] ([ReferredBy]) VALUES (@ReferredBy)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ReferredBy" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ReferredBy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ReferredBy FROM dbo.ReferredBy</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ReferredBy" DataSetColumn="ReferredBy" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AllReservationsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="AllReservationsDataSet" msprop:Generator_UserDSName="AllReservationsDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Bookings" msprop:Generator_TableClassName="BookingsDataTable" msprop:Generator_TableVarName="tableBookings" msprop:Generator_RowChangedName="BookingsRowChanged" msprop:Generator_TablePropName="Bookings" msprop:Generator_RowDeletingName="BookingsRowDeleting" msprop:Generator_RowChangingName="BookingsRowChanging" msprop:Generator_RowEvHandlerName="BookingsRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingsRowDeleted" msprop:Generator_RowClassName="BookingsRow" msprop:Generator_UserTableName="Bookings" msprop:Generator_RowEvArgName="BookingsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CheckIn" msprop:Generator_ColumnVarNameInTable="columnCheckIn" msprop:Generator_ColumnPropNameInRow="CheckIn" msprop:Generator_ColumnPropNameInTable="CheckInColumn" msprop:Generator_UserColumnName="CheckIn" type="xs:dateTime" />
+              <xs:element name="CheckOut" msprop:Generator_ColumnVarNameInTable="columnCheckOut" msprop:Generator_ColumnPropNameInRow="CheckOut" msprop:Generator_ColumnPropNameInTable="CheckOutColumn" msprop:Generator_UserColumnName="CheckOut" type="xs:dateTime" />
+              <xs:element name="Nights" msprop:Generator_ColumnVarNameInTable="columnNights" msprop:Generator_ColumnPropNameInRow="Nights" msprop:Generator_ColumnPropNameInTable="NightsColumn" msprop:Generator_UserColumnName="Nights" type="xs:int" />
+              <xs:element name="HasCar" msprop:Generator_ColumnVarNameInTable="columnHasCar" msprop:Generator_ColumnPropNameInRow="HasCar" msprop:Generator_ColumnPropNameInTable="HasCarColumn" msprop:Generator_UserColumnName="HasCar" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BookDate" msprop:Generator_ColumnVarNameInTable="columnBookDate" msprop:Generator_ColumnPropNameInRow="BookDate" msprop:Generator_ColumnPropNameInTable="BookDateColumn" msprop:Generator_UserColumnName="BookDate" type="xs:dateTime" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalSum" msprop:Generator_ColumnVarNameInTable="columnTotalSum" msprop:Generator_ColumnPropNameInRow="TotalSum" msprop:Generator_ColumnPropNameInTable="TotalSumColumn" msprop:Generator_UserColumnName="TotalSum" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RestSum" msprop:Generator_ColumnVarNameInTable="columnRestSum" msprop:Generator_ColumnPropNameInRow="RestSum" msprop:Generator_ColumnPropNameInTable="RestSumColumn" msprop:Generator_UserColumnName="RestSum" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BookingStatusName" msprop:Generator_ColumnVarNameInTable="columnBookingStatusName" msprop:Generator_ColumnPropNameInRow="BookingStatusName" msprop:Generator_ColumnPropNameInTable="BookingStatusNameColumn" msprop:Generator_UserColumnName="BookingStatusName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GuestName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGuestName" msprop:Generator_ColumnPropNameInRow="GuestName" msprop:Generator_ColumnPropNameInTable="GuestNameColumn" msprop:Generator_UserColumnName="GuestName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="767" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_UserColumnName="Phone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReferredBy" msprop:Generator_ColumnVarNameInTable="columnReferredBy" msprop:Generator_ColumnPropNameInRow="ReferredBy" msprop:Generator_ColumnPropNameInTable="ReferredByColumn" msprop:Generator_UserColumnName="ReferredBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BookingID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnBookingID" msprop:Generator_ColumnPropNameInRow="BookingID" msprop:Generator_ColumnPropNameInTable="BookingIDColumn" msprop:Generator_UserColumnName="BookingID" type="xs:long" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BookingStatus" msprop:Generator_TableClassName="BookingStatusDataTable" msprop:Generator_TableVarName="tableBookingStatus" msprop:Generator_RowChangedName="BookingStatusRowChanged" msprop:Generator_TablePropName="BookingStatus" msprop:Generator_RowDeletingName="BookingStatusRowDeleting" msprop:Generator_RowChangingName="BookingStatusRowChanging" msprop:Generator_RowEvHandlerName="BookingStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingStatusRowDeleted" msprop:Generator_RowClassName="BookingStatusRow" msprop:Generator_UserTableName="BookingStatus" msprop:Generator_RowEvArgName="BookingStatusRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BookingStatusName" msprop:Generator_ColumnVarNameInTable="columnBookingStatusName" msprop:Generator_ColumnPropNameInRow="BookingStatusName" msprop:Generator_ColumnPropNameInTable="BookingStatusNameColumn" msprop:Generator_UserColumnName="BookingStatusName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ReferredBy" msprop:Generator_TableClassName="ReferredByDataTable" msprop:Generator_TableVarName="tableReferredBy" msprop:Generator_RowChangedName="ReferredByRowChanged" msprop:Generator_TablePropName="ReferredBy" msprop:Generator_RowDeletingName="ReferredByRowDeleting" msprop:Generator_RowChangingName="ReferredByRowChanging" msprop:Generator_RowEvHandlerName="ReferredByRowChangeEventHandler" msprop:Generator_RowDeletedName="ReferredByRowDeleted" msprop:Generator_RowClassName="ReferredByRow" msprop:Generator_UserTableName="ReferredBy" msprop:Generator_RowEvArgName="ReferredByRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReferredBy" msprop:Generator_ColumnVarNameInTable="columnReferredBy" msprop:Generator_ColumnPropNameInRow="ReferredBy" msprop:Generator_ColumnPropNameInTable="ReferredByColumn" msprop:Generator_UserColumnName="ReferredBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Bookings" />
+      <xs:field xpath="mstns:BookingID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

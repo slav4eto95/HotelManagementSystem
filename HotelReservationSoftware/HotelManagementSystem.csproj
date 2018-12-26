@@ -1,0 +1,1067 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B27CF25F-322D-4A83-919F-0947BFAFBB00}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HotelReservationSoftware</RootNamespace>
+    <AssemblyName>HotelManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>reception-1015489_640.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D4FE2431E845924FEDBD4F1532E439C876BBE723</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>HotelManagementSystem_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MahApps.Metro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.0.0.0\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Reactive.Core, Version=2.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Core.2.2.4\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Interfaces.2.2.4\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Linq.2.2.4\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.Ribbon35">
+      <HintPath>..\..\..\..\..\..\Downloads\System.Windows.Forms.Ribbon35.dll\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.0.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewService.Designer.cs">
+      <DependentUpon>AddNewService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddReservation.Designer.cs">
+      <DependentUpon>AddReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRoom.Designer.cs">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRoomGuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRoomGuest.Designer.cs">
+      <DependentUpon>AddRoomGuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRoomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRoomType.Designer.cs">
+      <DependentUpon>AddRoomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddService.Designer.cs">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllGuests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllGuests.Designer.cs">
+      <DependentUpon>AllGuests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllReservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllReservations.Designer.cs">
+      <DependentUpon>AllReservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllReservationsDataSet.cs">
+      <DependentUpon>AllReservationsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AllReservationsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllReservationsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AllRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllRooms.Designer.cs">
+      <DependentUpon>AllRooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllRoomTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllRoomTypes.Designer.cs">
+      <DependentUpon>AllRoomTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllServices.Designer.cs">
+      <DependentUpon>AllServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllUsers.Designer.cs">
+      <DependentUpon>AllUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookedRoom.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookedRoomsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookedRoomsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BookedRoomsInformation_Result.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookedService.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookedServiceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookedServiceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BookedServicesDTO.cs" />
+    <Compile Include="Booking.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookingStatu.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckInCheckOutGuests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckInCheckOutGuests.Designer.cs">
+      <DependentUpon>CheckInCheckOutGuests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckInCheckOutToday.cs">
+      <DependentUpon>CheckInCheckOutToday.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CheckInCheckOutToday.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckInCheckOutToday.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Countries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Countries.Designer.cs">
+      <DependentUpon>Countries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cryptography.cs" />
+    <Compile Include="DailyOccupancyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DailyOccupancyDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DailyOccupancyView.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Guest.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GuestsDataSet.cs">
+      <DependentUpon>GuestsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GuestsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GuestsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMessageBoxOk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMessageBoxOk.Designer.cs">
+      <DependentUpon>CustomMessageBoxOk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMessageBoxYesNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMessageBoxYesNo.Designer.cs">
+      <DependentUpon>CustomMessageBoxYesNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForBookingReceipt_Result.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBHelpers\BookedRooms.cs" />
+    <Compile Include="DBHelpers\BookedServices.cs" />
+    <Compile Include="DBHelpers\Bookings.cs" />
+    <Compile Include="DBHelpers\Guests.cs" />
+    <Compile Include="DBBackupRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBBackupRestore.Designer.cs">
+      <DependentUpon>DBBackupRestore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBHelpers\Payments.cs" />
+    <Compile Include="DBHelpers\Rooms.cs" />
+    <Compile Include="DBHelpers\RoomTypes.cs" />
+    <Compile Include="EditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUser.Designer.cs">
+      <DependentUpon>EditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBHelpers\Helpers.cs" />
+    <Compile Include="ExportFormats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportFormats.Designer.cs">
+      <DependentUpon>ExportFormats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetUserLevelDescription_Result.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetUserLevelID_Result.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelManagementSystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelManagementSystemDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HotelManagementSystemDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelManagementSystemDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HotelManagementSystemModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelManagementSystemModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelManagementSystemModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelManagementSystemModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelManagementSystemModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="KeyPressValidation.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonthsGuests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthsGuests.Designer.cs">
+      <DependentUpon>MonthsGuests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyMessageBox.cs" />
+    <Compile Include="Payment.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMethod.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptForm.Designer.cs">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReferredBy.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CheckOutReport.cs">
+      <DependentUpon>CheckOutReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\CheckInReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckInReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CountriesGuests.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountriesGuests.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DailyOccupancyReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DailyOccupancyReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Guests.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Guests.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\MonthsGuests.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthsGuests.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Receipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Receipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reservations.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reservations.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RoomsReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomsReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ServicesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServicesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportViewerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportViewerControl.Designer.cs">
+      <DependentUpon>ReportViewerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReservationsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservationsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReservationsView.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Room.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rooms.Designer.cs">
+      <DependentUpon>Rooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoomsControl.Designer.cs">
+      <DependentUpon>RoomsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomsDataSet.cs">
+      <DependentUpon>RoomsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RoomsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RoomSearchCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomSearchCenter.Designer.cs">
+      <DependentUpon>RoomSearchCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomStatu.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoomsView.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoomsWithTheirTypeDataSet.cs">
+      <DependentUpon>RoomsWithTheirTypeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RoomsWithTheirTypeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomsWithTheirTypeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RoomType.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoomTypesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomTypesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RoomTypesView.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SearchGuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchGuest.Designer.cs">
+      <DependentUpon>SearchGuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServicesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticForCountriesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatisticForCountriesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticForCountries_Result.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticForMonthsAndGuestsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatisticForMonthsAndGuestsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticForMonthsAndGuests_Result.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Title.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TodayCheckIn.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TodayCheckOut.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SearchCenterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchCenterControl.Designer.cs">
+      <DependentUpon>SearchCenterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserLevel.cs">
+      <DependentUpon>HotelManagementSystemModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserLevelsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserLevelsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserLevelsDTO.cs" />
+    <Compile Include="DBHelpers\Users.cs" />
+    <Compile Include="UsersDTO.cs" />
+    <Compile Include="Validation.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewService.resx">
+      <DependentUpon>AddNewService.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddReservation.resx">
+      <DependentUpon>AddReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRoom.resx">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRoomGuest.resx">
+      <DependentUpon>AddRoomGuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRoomType.resx">
+      <DependentUpon>AddRoomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddService.resx">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllGuests.resx">
+      <DependentUpon>AllGuests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllReservations.resx">
+      <DependentUpon>AllReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllRooms.resx">
+      <DependentUpon>AllRooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllRoomTypes.resx">
+      <DependentUpon>AllRoomTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllServices.resx">
+      <DependentUpon>AllServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllUsers.resx">
+      <DependentUpon>AllUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.bg-BG.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckInCheckOutGuests.resx">
+      <DependentUpon>CheckInCheckOutGuests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Countries.resx">
+      <DependentUpon>Countries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomMessageBoxOk.resx">
+      <DependentUpon>CustomMessageBoxOk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomMessageBoxYesNo.resx">
+      <DependentUpon>CustomMessageBoxYesNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBBackupRestore.resx">
+      <DependentUpon>DBBackupRestore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUser.resx">
+      <DependentUpon>EditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportFormats.resx">
+      <DependentUpon>ExportFormats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthsGuests.resx">
+      <DependentUpon>MonthsGuests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiptForm.resx">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CheckOutReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CheckOutReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CheckInReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CheckInReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CountriesGuests.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CountriesGuests.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DailyOccupancyReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DailyOccupancyReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Guests.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Guests.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MonthsGuests.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MonthsGuests.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Receipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Receipt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reservations.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Reservations.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RoomsReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RoomsReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ServicesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ServicesReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportViewerControl.resx">
+      <DependentUpon>ReportViewerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rooms.resx">
+      <DependentUpon>Rooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomsControl.resx">
+      <DependentUpon>RoomsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomSearchCenter.resx">
+      <DependentUpon>RoomSearchCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchCenterControl.resx">
+      <DependentUpon>SearchCenterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchGuest.resx">
+      <DependentUpon>SearchGuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AllReservationsDataSet.xsc">
+      <DependentUpon>AllReservationsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AllReservationsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AllReservationsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AllReservationsDataSet.xss">
+      <DependentUpon>AllReservationsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BookedRoomsDataSet.xsc">
+      <DependentUpon>BookedRoomsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BookedRoomsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookedRoomsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookedRoomsDataSet.xss">
+      <DependentUpon>BookedRoomsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BookedServiceDataSet.xsc">
+      <DependentUpon>BookedServiceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BookedServiceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookedServiceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookedServiceDataSet.xss">
+      <DependentUpon>BookedServiceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CheckInCheckOutToday.xsc">
+      <DependentUpon>CheckInCheckOutToday.xsd</DependentUpon>
+    </None>
+    <None Include="CheckInCheckOutToday.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CheckInCheckOutToday.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CheckInCheckOutToday.xss">
+      <DependentUpon>CheckInCheckOutToday.xsd</DependentUpon>
+    </None>
+    <None Include="DailyOccupancyDataSet.xsc">
+      <DependentUpon>DailyOccupancyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DailyOccupancyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DailyOccupancyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DailyOccupancyDataSet.xss">
+      <DependentUpon>DailyOccupancyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GuestsDataSet.xsc">
+      <DependentUpon>GuestsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GuestsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GuestsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GuestsDataSet.xss">
+      <DependentUpon>GuestsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HotelManagementSystemDataSet.xsc">
+      <DependentUpon>HotelManagementSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HotelManagementSystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HotelManagementSystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HotelManagementSystemDataSet.xss">
+      <DependentUpon>HotelManagementSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HotelManagementSystemDataSet1.xsc">
+      <DependentUpon>HotelManagementSystemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HotelManagementSystemDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HotelManagementSystemDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HotelManagementSystemDataSet1.xss">
+      <DependentUpon>HotelManagementSystemDataSet1.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="HotelManagementSystemModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HotelManagementSystemModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="HotelManagementSystemModel.edmx.diagram">
+      <DependentUpon>HotelManagementSystemModel.edmx</DependentUpon>
+    </None>
+    <None Include="HotelManagementSystem_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\User.datasource" />
+    <None Include="Properties\DataSources\UserLevel.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ReservationsDataSet.xsc">
+      <DependentUpon>ReservationsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReservationsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReservationsDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReservationsDataSet.xss">
+      <DependentUpon>ReservationsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RoomsDataSet.xsc">
+      <DependentUpon>RoomsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RoomsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RoomsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RoomsDataSet.xss">
+      <DependentUpon>RoomsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RoomsWithTheirTypeDataSet.xsc">
+      <DependentUpon>RoomsWithTheirTypeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RoomsWithTheirTypeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RoomsWithTheirTypeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RoomsWithTheirTypeDataSet.xss">
+      <DependentUpon>RoomsWithTheirTypeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RoomTypesDataSet.xsc">
+      <DependentUpon>RoomTypesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RoomTypesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RoomTypesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RoomTypesDataSet.xss">
+      <DependentUpon>RoomTypesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ServicesDataSet.xsc">
+      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ServicesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ServicesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ServicesDataSet.xss">
+      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StatisticForCountriesDataSet.xsc">
+      <DependentUpon>StatisticForCountriesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StatisticForCountriesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StatisticForCountriesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StatisticForCountriesDataSet.xss">
+      <DependentUpon>StatisticForCountriesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StatisticForMonthsAndGuestsDataSet.xsc">
+      <DependentUpon>StatisticForMonthsAndGuestsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StatisticForMonthsAndGuestsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StatisticForMonthsAndGuestsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StatisticForMonthsAndGuestsDataSet.xss">
+      <DependentUpon>StatisticForMonthsAndGuestsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UserLevelsDataSet.xsc">
+      <DependentUpon>UserLevelsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UserLevelsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UserLevelsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UserLevelsDataSet.xss">
+      <DependentUpon>UserLevelsDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HotelManagementSystemModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HotelManagementSystemModel.edmx</DependentUpon>
+      <LastGenOutput>HotelManagementSystemModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HotelManagementSystemModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HotelManagementSystemModel.edmx</DependentUpon>
+      <LastGenOutput>HotelManagementSystemModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Images\bell-214297_640.jpg" />
+    <Content Include="Images\button_cancel.png" />
+    <None Include="Images\change_pass.ico" />
+    <None Include="Images\checkout.ico" />
+    <None Include="Images\checkin.ico" />
+    <Content Include="Images\clock.png" />
+    <Content Include="Images\home.png" />
+    <Content Include="Images\home2.jpg" />
+    <Content Include="Images\hotel-595587.jpg" />
+    <Content Include="Images\hotel-595587_1280.jpg" />
+    <Content Include="Images\hotel-595587_640.jpg" />
+    <Content Include="Images\hotel.jpg" />
+    <Content Include="Images\icon.png" />
+    <None Include="Images\information.png" />
+    <Content Include="Images\Login-icon.png" />
+    <None Include="Images\logout_32x32.png" />
+    <None Include="Images\logout_64x64.png" />
+    <None Include="Images\Login-icon_32x32.png" />
+    <Content Include="Images\minus.png" />
+    <None Include="Images\pass_32x17.png" />
+    <None Include="Images\pass_64x34.png" />
+    <None Include="Images\pass.png" />
+    <None Include="Images\pass_120.png" />
+    <Content Include="Images\pencil.png" />
+    <Content Include="Images\plus.png" />
+    <Content Include="Images\profile.png" />
+    <None Include="Images\question_mark.png" />
+    <Content Include="Images\reception-1015489_1280.jpg" />
+    <Content Include="Images\reception-1015489_1920.jpg" />
+    <None Include="Images\reports.png" />
+    <None Include="Images\user-group-icon.png" />
+    <None Include="Images\user-group-16x16.png" />
+    <None Include="Images\user-group-32x32.png" />
+    <None Include="Images\user-group-64x64.png" />
+    <None Include="Images\reports-32x30.png" />
+    <None Include="Images\reports-64x59.png" />
+    <None Include="Images\reports_32x30.png" />
+    <None Include="Images\reports_64x59.png" />
+    <None Include="Images\user_group_32x32.png" />
+    <None Include="Images\user_group_64x64.png" />
+    <None Include="Images\room_search_32x32.png" />
+    <None Include="Images\room_search_64x64.png" />
+    <Content Include="reception-1015489_640.ico" />
+    <None Include="Resources\About.jpg" />
+    <Content Include="Updates.txt" />
+    <None Include="Images\reception-1015489_640.ico" />
+    <Content Include="Images\reception-1015489_640.jpg" />
+    <Content Include="Images\room.jpg" />
+    <Content Include="Images\user-login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.10.1\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props'))" />
+  </Target>
+</Project>

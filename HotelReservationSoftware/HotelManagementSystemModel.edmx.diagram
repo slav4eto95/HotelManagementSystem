@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a66d72f877624bccaa1356def5d2d221" Name="Diagram1">
+        <EntityTypeShape EntityType="HotelManagementSystemModel.BookedRoom" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.BookedService" Width="1.5" PointX="9.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.Booking" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.BookingStatu" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.PaymentMethod" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.Payment" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.ReferredBy" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.Room" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.RoomStatu" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.Service" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.sysdiagram" Width="1.5" PointX="5.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.Title" Width="1.5" PointX="1" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.UserLevel" Width="1.5" PointX="9.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.User" Width="1.5" PointX="9.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.TodayCheckIn" Width="1.5" PointX="7.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.TodayCheckOut" Width="1.5" PointX="10.75" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="HotelManagementSystemModel.fk_BookedRoomsBookingID" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelManagementSystemModel.fk_RoomID" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelManagementSystemModel.fk_BookedServicesBookingID" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelManagementSystemModel.fk_ServiceID" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelManagementSystemModel.fk_BookingID" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelManagementSystemModel.fk_BookingStatusID" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelManagementSystemModel.fk_ReferredByID" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelManagementSystemModel.fk_PaymentMethodID" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelManagementSystemModel.fk_RoomStatusID" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelManagementSystemModel.fk_UserLevelID" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.RoomType" Width="1.5" PointX="3" PointY="16.125" />
+        <AssociationConnector Association="HotelManagementSystemModel.fk_RoomTypeID" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.Guest" Width="1.5" PointX="3" PointY="3.875" />
+        <AssociationConnector Association="HotelManagementSystemModel.fk_GuestID" />
+        <AssociationConnector Association="HotelManagementSystemModel.fk_TitleID" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.RoomsView" Width="1.5" PointX="14.5" PointY="5.625" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.RoomTypesView" Width="1.5" PointX="13.375" PointY="8.75" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.ReservationsView" Width="1.5" PointX="13.375" PointY="12.75" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.DailyOccupancyView" Width="1.5" PointX="1" PointY="1.375" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
