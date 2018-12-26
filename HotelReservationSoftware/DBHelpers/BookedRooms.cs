@@ -97,14 +97,6 @@ namespace HotelReservationSoftware.DBHelpers
             return isEdited;
         }
 
-        public BookedRoom GetBookedRoomByID(long bookingID)
-        {
-            using (var db = new HotelManagementSystemEntities())
-            {
-                return (db.BookedRooms.Where(br=>br.BookingID == bookingID).FirstOrDefault());
-            }
-        }
-
         public List<BookedRoom> GetAllBookedRoomsByBookingID(long bookingID)
         {
             using (var db = new HotelManagementSystemEntities())

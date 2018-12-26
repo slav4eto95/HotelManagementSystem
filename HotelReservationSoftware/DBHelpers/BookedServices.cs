@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace HotelReservationSoftware.DBHelpers
@@ -70,9 +69,6 @@ namespace HotelReservationSoftware.DBHelpers
 
             using (var db = new HotelManagementSystemEntities())
             {
-                //var result = from bs in db.BookedServices
-                //             where bs.BookedServiceID == id
-                //             select bs;
                 var result = db.BookedServices
                                 .Where(bs => bs.BookingID == bookingID && bs.ServiceID == serviceID)
                                 .ToList();
@@ -89,19 +85,11 @@ namespace HotelReservationSoftware.DBHelpers
             return isDeleted;
         }
 
-        public BookedService GetBookedServiceByID(long bookingID)
-        {
-            using (var db = new HotelManagementSystemEntities())
-            {
-                return (db.BookedServices.Where(bs => bs.BookingID == bookingID).FirstOrDefault());
-            }
-        }
-
         public List<BookedService> GetAllBookedServicesByBookingID(long bookingID)
         {
             using (var db = new HotelManagementSystemEntities())
             {
-                return (db.BookedServices.Where(bs=> bs.BookingID == bookingID).ToList());
+                return (db.BookedServices.Where(bs => bs.BookingID == bookingID).ToList());
             }
         }
     }

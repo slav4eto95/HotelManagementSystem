@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace HotelReservationSoftware.DBHelpers
@@ -141,7 +139,7 @@ namespace HotelReservationSoftware.DBHelpers
         {
             using (var db = new HotelManagementSystemEntities())
             {
-                return (db.Bookings.Where(b=>b.BookingID == bookingID).FirstOrDefault());
+                return (db.Bookings.Where(b => b.BookingID == bookingID).FirstOrDefault());
             }
         }
     }

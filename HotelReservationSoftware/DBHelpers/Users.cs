@@ -86,36 +86,6 @@ namespace HotelReservationSoftware
             return isChanged;
         }
 
-        //https://www.c-sharpcorner.com/article/crud-operation-using-entity-framework-in-windows-form-application/
-        /*public List<User> GetUsers()
-        {
-            using (var db = new HotelManagementSystemEntities())
-            {
-                return (from u in db.Users
-                        select new UsersDTO
-                        {
-                            UserID = u.UserID,
-                            Name = u.Name,
-                            Username = u.Username,
-                            UserLevelID = u.UserLevelID,
-                            Password = u.Password
-                        }).ToList();
-            }
-        }*/
-
-        public List<UserLevelsDTO> GetUserLevels()
-        {
-            using (var db = new HotelManagementSystemEntities())
-            {
-                return (from ul in db.UserLevels
-                        select new UserLevelsDTO
-                        {
-                            UserLevelID = ul.UserLevelID,
-                            UserLevelDesc = ul.UserLevelDesc
-                        }).ToList();
-            }
-        }
-
         public bool CheckIfUserAlreadyExists(User user)
         {
             using (var db = new HotelManagementSystemEntities())

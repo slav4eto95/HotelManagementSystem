@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Validation;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace HotelReservationSoftware
@@ -24,7 +20,7 @@ namespace HotelReservationSoftware
             reader.Read();
             if (reader.HasRows)
                 //here is your data
-                lastInsertedID = Int16.Parse(reader[fieldID].ToString());
+                lastInsertedID = short.Parse(reader[fieldID].ToString());
 
             reader.Close();
             connection.Close();

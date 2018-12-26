@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Security.Cryptography;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
