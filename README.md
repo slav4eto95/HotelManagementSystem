@@ -1,6 +1,7 @@
 # Hotel Management System
 
-Language - C#, framework - Entity Framework
+Language - C#, framework - Entity Framework  
+
 Simple hotel management system with three roles - administrator, manager and receptionist.
 
 Using this system, you can simply add new reservations, services, rooms, etc. 
